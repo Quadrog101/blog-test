@@ -1,0 +1,22 @@
+﻿@model blog_test.Models.PostDetailedViewModel
+
+<div>
+    <h2>@Model.Title</h2>
+    <hr />
+    <div class="row">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+    <hr />
+    <div class="row">
+        <h5>Комментарии:</h5>
+        @foreach (var comment in Model.Comments)
+        {
+            <partial name="~/Views/Comments/Comment.cshtml" model="comment"/>
+        }
+            
+        @await Html.PartialAsync("~/Views/Comments/Create.cshtml", new CreateCommentModel { PostId = Model.Id })
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Назад</a>
+</div>

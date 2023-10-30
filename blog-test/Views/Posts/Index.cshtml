@@ -1,0 +1,15 @@
+﻿@model IEnumerable<blog_test.ViewModels.PostViewModel>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Главная</h1>
+
+<p>
+    <a asp-action="Create">Создать новый</a>
+</p>
+<div class="container">
+    @foreach (var item in Model) {
+            <partial name="Post" model="item"/>
+    }
+</div>

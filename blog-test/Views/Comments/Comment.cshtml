@@ -1,0 +1,16 @@
+﻿@model CommentViewModel
+
+<div class="comment">
+    <div class="col-sm-8">
+        @Html.DisplayFor(model => Model.Author)
+    </div>
+    
+    <div class="col-sm-2">
+        @Html.DisplayFor(model => Model.Content)
+    </div>
+
+    <div class="col-sm-2">
+        @Html.DisplayFor(model => Model.ChangedDate)
+        <a asp-action="Delete" asp-controller="Comments" asp-route-id="@Model.Id" asp-route-postId="@Model.PostId">Удалить</a>
+    </div>
+</div>

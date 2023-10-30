@@ -1,0 +1,19 @@
+﻿@model blog_test.ViewModels.PostViewModel
+
+<div class="card" >
+    <div class="card-header">
+        <a asp-action="Details" asp-route-id="@Model.Id">
+            @Html.DisplayFor(model => Model.Title)
+        </a> 
+    </div>
+
+    <div class="card-body">
+        @Html.DisplayFor(model => Model.Description)
+    </div>
+    
+    <div class="card-footer">
+        @Html.DisplayFor(model => Model.ChangedDate)
+        <a asp-action="Edit" asp-route-id="@Model.Id">Изменить</a> |
+        <a asp-action="Delete" asp-route-id="@Model.Id">Удалить</a>
+    </div>
+</div>

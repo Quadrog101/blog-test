@@ -1,0 +1,16 @@
+﻿@model blog_test.Models.CreateCommentModel
+
+<form method="post" asp-controller="Comments" asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <input asp-for="PostId" class="form-control" type="hidden" />
+        
+        <label asp-for="Content" class="control-label"></label>
+        <textarea asp-for="Content" class="form-control" ></textarea>
+        
+        <span asp-validation-for="Content" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
